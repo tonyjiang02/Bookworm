@@ -4,6 +4,7 @@ lang = detect(cleaned_email) # lang = 'en' for an English email
 
 #Sentence Tokenization with nltk
 from nltk.tokenize import sent_tokenize
+email = "Hi my name is Tony and I am looking for a job."
 sentences = sent_tokenize(email, language = lang)
 
 #Skip-Gram Word2Vec Skip-Thought Encoder converts sentences to vectors
@@ -20,3 +21,22 @@ model = skipthoughts.load_model()
 
 encoder = skipthoughts.Encoder(model)
 encoded =  encoder.encode(sentences)
+
+# Clustering: number of clusters = desired sentences in summary
+import numpy as np
+from sklearn.cluster import KMeans
+
+n_clusters = np.ceil(len(encoded)**0.5)
+kmeans = KMeans(n_clusters=n_clusters)
+kmeans = kmeans.fit(encoded)
+
+#Summarization: one sentence, whose vector is closest to center, is chosen from each cluster
+from sklearn.metrics import pairwise_distances_argmin_min
+
+avg = []
+for j in range(n_clusters):
+    idx = np.where(kmeans.labels_ == j)[0]
+    avg.append(np.mean(idx))
+closest, _ = pairwise_distances_argmin_min(kmeans.cluster_centers_, encoded)
+ordering = sorted(range(n_clusters), key=lambda k: avg[k])
+summary = ' '.join([email[closest[idx]] for idx in ordering])
