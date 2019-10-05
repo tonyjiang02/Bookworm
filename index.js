@@ -1,6 +1,7 @@
-const fileInput = document.getElementById("file-input")
+const fileInput = document.getElementById("img-input")
 fileInput.addEventListener('change', function(e){
-  processImage(e.target.files)
+  processImage(e.target.files);
+  document.querySelector(".input.empty").classList.remove("empty");
 })
 
 function processImage(fileList) {
@@ -45,3 +46,4 @@ window.addEventListener('beforeinstallprompt', (e) => {
       });
   });
 });
+}
