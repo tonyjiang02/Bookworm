@@ -11,9 +11,11 @@ function processImage(fileList) {
     if (fileList[i].type.match(/^image\//)) {
         file = fileList[i];
         break
+    }
   }
   if (file !=null) {
     url = URL.createObjectURL(file);
+    imageToText(url)
   }
 }
 // Register service worker to control making site work offline
