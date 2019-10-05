@@ -52,14 +52,12 @@ body{
     padding: 20px;
 
     display: grid;
-    grid-template-columns: 60% 30%;
-    column-gap: 10%;
+    grid-template-columns: 60% 10% 30%;
 
-    transition: grid-template-column .5s, column-gap .5s;
+    transition: grid-template-column .5s;
 }
 .input.empty{
-    grid-template-columns: 100% 0%;
-    column-gap: 0%;
+    grid-template-columns: 100% 0% 0%;
 }
 .input > *{
     display: inline-block;

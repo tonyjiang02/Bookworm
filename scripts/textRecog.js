@@ -1,3 +1,5 @@
+deepai.setApiKey('28704cbe-4d81-47d5-8aea-f3b3644dd650')
+
 function imageToText(url) {
   console.log("Hello")
   Tesseract.recognize(
@@ -10,11 +12,14 @@ function imageToText(url) {
 }
 
 function linearizeText(text) {
-  var p = document.getElementById("interpretation")
-  p.innerHTML = text
-  sendTextToServer(text)
+  summarize(text).then()
 }
 
-function processText(test) {
-
+async function summarize(text) {
+  res = await deepai.callStandardApi("summarization", {
+    text: text
+  });
+  console.log(res)
+  var p = document.getElementById("interpretation")
+  p.innerHTML = res.output
 }
