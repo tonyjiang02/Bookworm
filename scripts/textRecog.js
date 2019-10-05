@@ -14,6 +14,7 @@ function imageToText(url) {
 function linearizeText(text) {
   document.getElementById("words").innerHTML = text
   console.log(text)
+  summarize(text)
 }
 
 async function summarize(text) {
