@@ -1,5 +1,6 @@
-const fileInput = document.getElementById("file-input")
+const fileInput = document.getElementById("image-input")
 fileInput.addEventListener('change', function(e){
+  console.log("FILE ADDED")
   processImage(e.target.files)
 })
 
@@ -10,9 +11,11 @@ function processImage(fileList) {
     if (fileList[i].type.match(/^image\//)) {
         file = fileList[i];
         break
+    }
   }
   if (file !=null) {
     url = URL.createObjectURL(file);
+    imageToText(url)
   }
 }
 // Register service worker to control making site work offline
