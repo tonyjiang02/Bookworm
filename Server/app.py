@@ -11,6 +11,6 @@ def hello():
 @app.route("/summarize", methods =["GET"])
 def summarize_text():
     text = request.args.get("text")
-    return 'text'
+    return text
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0')
