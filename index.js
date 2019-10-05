@@ -1,18 +1,26 @@
-const images = ['fox1','fox2','fox3','fox4'];
-const imgElem = document.querySelector('img');
+const fileInput = document.getElementById("file-input")
+fileInput.addEventListener('change', function(e){
+  processImage(e.target.files)
+})
 
-function randomValueFromArray(array) {
-  let randomNo =  Math.floor(Math.random() * array.length);
-  return array[randomNo];
+function processImage(fileList) {
+  let file = null;
+  var url;
+  for (let i =0; i<fileList.length; i++){
+    if (fileList[i].type.match(/^image\//)) {
+        file = fileList[i];
+        break
+  }
+  if (file !=null) {
+    url = URL.createObjectURL(file);
+  }
 }
 
-setInterval(function() {
-  let randomChoice = randomValueFromArray(images);
-  imgElem.src = 'images/' + randomChoice + '.jpg';
-}, 2000)
+
+
+
 
 // Register service worker to control making site work offline
-
 if('serviceWorker' in navigator) {
   navigator.serviceWorker
            .register('/pwa-examples/a2hs/sw.js')
