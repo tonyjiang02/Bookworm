@@ -1,11 +1,10 @@
-const url = "http://10.100.19.116:5000/summarize?text=asdfasdfasdfasdfasdfasdf"
+const url = "http://10.100.19.116:5000/summarize?text="
 
 function sendTextToServer(text){
-    const data = {
-        text: text
-    }
     axios({
         method: 'get',
-        url: url,
-    }).then(data =>console.log(data)).catch(err=>console.log(err))
+        url: url+text,
+    }).then(function(response) {
+        console.log(response)
+    })
 }
