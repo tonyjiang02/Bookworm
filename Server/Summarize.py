@@ -20,25 +20,7 @@ import skipthoughts
 from sklearn.cluster import KMeans
 from sklearn.metrics import pairwise_distances_argmin_min
 # ***************************************************************************
-
-
-def preprocess(emails):
-    """
-    Performs preprocessing operations such as:
-        1. Removing signature lines (only English emails are supported)
-        2. Removing new line characters.
-    """
-    n_emails = len(emails)
-    for i in range(n_emails):
-        email = emails[i]
-        email, _ = extract_signature(email)
-        lines = email.split('\n')
-        for j in reversed(range(len(lines))):
-            lines[j] = lines[j].strip()
-            if lines[j] == '':
-                lines.pop(j)
-        emails[i] = ' '.join(lines)
-
+emails = ["Well, Prince, so Genoa and Lucca are now just family estates of the Buonapartes. \n But I warn you, if you don’t tell me that this means war, if you still try to defend the infamies and horrors perpetrated by that Antichrist—I really believe he is Antichrist—I will have nothing more to do with you and you are no longer my friend, no longer my ‘faithful slave,’ as you call yourself! But how do you do? I see I have frightened you—sit down and tell me all the news."]
 
 def split_sentences(emails):
     """
@@ -87,8 +69,6 @@ def summarize(emails):
     """
     n_emails = len(emails)
     summary = [None]*n_emails
-    print('Preprecesing...')
-    preprocess(emails)
     print('Splitting into sentences...')
     split_sentences(emails)
     print('Starting to encode...')
@@ -110,3 +90,8 @@ def summarize(emails):
         summary[i] = ' '.join([emails[i][closest[idx]] for idx in ordering])
     print('Clustering Finished')
     return summary
+
+split_sentences(emails)
+skipthought_encode(emails)
+summarize(emails)
+print (summary)
