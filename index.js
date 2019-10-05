@@ -1,7 +1,8 @@
 const fileInput = document.getElementById("img-input")
 fileInput.addEventListener('change', function(e){
   processImage(e.target.files);
-  document.querySelector(".input.empty").classList.remove("empty");
+  if (document.querySelector(".input.empty"))
+    document.querySelector(".input.empty").classList.remove("empty");
 })
 
 function processImage(fileList) {
@@ -15,8 +16,8 @@ function processImage(fileList) {
   }
   if (file !=null) {
     url = URL.createObjectURL(file);
-    var imgpreview = document.querySelector(".img-preview");
-    imgpreview.style.setProperty("--bg-image", url);
+    var imgpreview = document.querySelector(".img-preview > img");
+    imgpreview.setAttribute('src', url);
     imageToText(url)
   }
 }
