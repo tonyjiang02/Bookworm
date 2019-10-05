@@ -10,9 +10,10 @@ function imageToText(url) {
 }
 
 function linearizeText(text) {
-  console.log(text)
+  var p = document.getElementById("interpretation")
+  p.innerHTML = text
 }
 
 function processText(test) {
-  
+
 }
