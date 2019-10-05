@@ -6,6 +6,7 @@
     <title>Bookworm</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="style/home.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
     <link rel="manifest" href="manifest.webmanifest">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -20,17 +21,19 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
 </head>
 
-<body>
+<body class="empty">
     <div class="head">
         <h1>Bookworm</h1>
     </div>
-    <div class="input empty">
-        <input type="file" accept="image/*" id="img-input" capture="environment" style="display: none;">
-        <input class="img-button" type="button" value="Upload Image"
-            onclick="document.getElementById('img-input').click();" />
-        <div></div>
+    <div class="input">
         <div class="img-preview">
           <img>
+        </div>
+        <div class="input-wrapper">
+          <input type="file" accept="image/*" id="img-input" capture="environment" style="display: none;">
+          <input class="img-button" type="button" value="&#xf030;"
+              onclick="document.getElementById('img-input').click();" />
+          <i class="fas fa-camera-retro"></i>
         </div>
     </div>
     <div class="worm">
