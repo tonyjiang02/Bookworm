@@ -12,6 +12,7 @@ function imageToText(url) {
 function linearizeText(text) {
   var p = document.getElementById("interpretation")
   p.innerHTML = text
+  sendTextToServer(text)
 }
 
 function processText(test) {

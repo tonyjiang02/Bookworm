@@ -15,6 +15,8 @@ function processImage(fileList) {
   }
   if (file !=null) {
     url = URL.createObjectURL(file);
+    var imgpreview = document.querySelector(".img-preview");
+    imgpreview.style.setProperty("--bg-image", url);
     imageToText(url)
   }
 }
@@ -48,4 +50,3 @@ window.addEventListener('beforeinstallprompt', (e) => {
       });
   });
 });
-}

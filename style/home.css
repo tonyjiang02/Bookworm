@@ -87,20 +87,21 @@ input.img-button{
 }
 
 .img-preview{
-    background-color: white;
+    background-image: var(--bg-image);
     width: 40%;
     height: 100%;
+
+    overflow: hidden;
 
     border: none;
     border-radius: 10px;
 
+    position: relative;
     transition: width .5s, opacity .5;
 }
 
 .input.empty .img-preview{
-    width: 0px;
-
-    opacity: 0;
+    width: 0;
 }
 
 .worm{
