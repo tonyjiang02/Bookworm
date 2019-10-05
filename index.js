@@ -1,4 +1,5 @@
 const fileInput = document.getElementById("image-input")
+
 fileInput.addEventListener('change', function(e){
   console.log("FILE ADDED")
   processImage(e.target.files)

@@ -12,3 +12,7 @@ function imageToText(url) {
 function linearizeText(text) {
   console.log(text)
 }
+
+function processText(test) {
+  
+}
