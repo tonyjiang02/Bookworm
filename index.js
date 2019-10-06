@@ -1,6 +1,5 @@
 const fileInput = document.getElementById("img-input")
 fileInput.addEventListener('change', function(e){
-  document.getElementById("loading").
   processImage(e.target.files);
   if (document.querySelector("body.empty"))
     document.querySelector("body.empty").classList.remove("empty");
