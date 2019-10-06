@@ -77,6 +77,8 @@ body{
 
     position: absolute;
     top: 60px;
+
+    z-index: 3;
 }
 .progress.hide{
     display: none;
