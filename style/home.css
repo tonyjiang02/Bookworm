@@ -71,12 +71,14 @@ body{
     text-align: center;
 }
 .progress{
-    background-image: linear-gradient(90deg, transparent, var(--color-nav), var(--color-lighter), white);
+    background-color: var(--color-lighter);
     width: 100%;
     height: 3px;
 
     position: absolute;
     top: 60px;
+
+    z-index: 3;
 }
 .progress.hide{
     display: none;
