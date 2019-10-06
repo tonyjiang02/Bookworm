@@ -17,6 +17,8 @@ html{
 
     display: grid;
     grid-template-columns: 33.3% 33.4% 33.3%;
+
+    z-index: 3;
 }
 .navbar a.active {
     background-color: #4CAF50;
@@ -72,13 +74,15 @@ body{
 }
 .progress{
     background-color: var(--color-lighter);
-    width: 100%;
+    width: 0%;
     height: 3px;
 
     position: absolute;
     top: 60px;
 
     z-index: 3;
+
+    transition: width 1s;
 }
 .progress.hide{
     display: none;
