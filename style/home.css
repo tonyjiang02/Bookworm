@@ -171,7 +171,7 @@ body.empty .bookmark{
     color: white;
     text-align: center;
 }
-body.empty .loading{
+body.empty .loading, .loading.hide{
     display: none;
 }
 
