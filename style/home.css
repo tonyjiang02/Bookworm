@@ -17,6 +17,8 @@ html{
 
     display: grid;
     grid-template-columns: 33.3% 33.4% 33.3%;
+
+    z-index: 3;
 }
 .navbar a.active {
     background-color: #4CAF50;
