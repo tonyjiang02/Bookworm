@@ -20,11 +20,6 @@ html{
 
     z-index: 3;
 }
-.navbar::after{
-    width: 100%;
-    height: 50px;
-    content: '';
-}
 .navbar a.active {
     background-color: #4CAF50;
     color: white;
@@ -239,6 +234,12 @@ body.empty .loading, .loading.hide{
 }
 body.empty .text-area{
     transform: scaleY(0);
+}
+.text-area::after{
+    width: 100%;
+    height: 50px;
+    content: '.';
+    color: transparent;
 }
 
 .text-area > div{
