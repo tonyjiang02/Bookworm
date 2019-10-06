@@ -26,10 +26,15 @@
     <div class="head">
         <h1>Bookworm</h1>
     </div>
-    <textarea rows="16" id="text-input-area"></textarea>
+    <textarea rows="16" id="text-input-area" placeholder="Paste text to summarize..."></textarea>
     <button type="button" id='submit-text'>Summarize</button>
-    <h3>Text Summary</h3>
-    <p id="interpretation" style="top: 0; margin-bottom: 60px"></p>
+    <div class="text-area hide">
+        <div>
+            <h3>Text Summarized</h3>
+            <p id="interpretation">
+            </p>
+        </div>
+    </div>
 
     <div class="navbar">
         <a href="index.html"><i class="fas fa-camera-retro"></i></a>
