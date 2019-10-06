@@ -24,49 +24,26 @@
 
 <body class="empty">
     <div class="navbar">
-        <a href="index.html" class="active"><i class="fas fa-camera-retro"></i></a>
-        <a href="textInput.html"><i class="fas fa-camera-retro"></i></a>
+        <a href="index.html"><i class="fas fa-camera-retro"></i></a>
+        <a href="textInput.html" class="active"><i class="fas fa-camera-retro"></i></a>
         <a href="searchOccurances.html"><i class="fas fa-camera-retro"></i></a>
     </div>
     <div class="head">
         <h1>Bookworm</h1>
     </div>
     <div class="input">
-        <div class="img-preview">
-            <img>
-        </div>
-        <div class="input-wrapper">
-            <input type="file" accept="image/*" id="img-input" style="display: none;">
-            <input class="img-button" type="button" value="&#xf030;"
-                onclick="document.getElementById('img-input').click();" />
-            <i class="fas fa-camera-retro"></i>
-        </div>
-    </div>
-    <div class="worm">
-        <div class="bookmark">
-
-        </div>
-    </div>
-    <div class="loading">
-        <h2 style="display: none" id="loading">. . .</h2>
-    </div>
-    <div class="text-area">
-        <h3>Text Scanned</h3>
-        <div>
-            <p id="words"></p>
-        </div>
+        <textarea rows = "8" id = "text-input-area"></textarea>
+        <button type = "button" id ='submit-text'>Summarize</button>
     </div>
     <div class="text-area">
         <h3>Text Summary</h3>
-        <div>
-            <p id="interpretation">
-            </p>
-        </div>
+        <p id="interpretation"></p>
     </div>
 </body>
 <script src="scripts/requests.js"></script>
 <script src="scripts/textRecog.js"></script>
 <script src="index.js" defer></script>
 <script src="scripts/fullscreen.js"></script>
+<script src="textInput.js"></script>
 
 </html>
