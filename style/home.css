@@ -75,7 +75,7 @@ body{
 .progress{
     background-color: var(--color-lighter);
     width: 0%;
-    height: 3px;
+    height: 1%;
 
     position: absolute;
     top: 60px;
@@ -221,6 +221,7 @@ body.empty .loading, .loading.hide{
 
 .text-area{
     transform-origin: bottom;
+    margin-bottom: 20px;
 
     min-height: calc(44% - 60px);
     max-height: max-content;
@@ -248,8 +249,26 @@ p {
 }
 textarea{
     width: 100%;
-    background-color: skyblue;
+    background-color: rgb(67, 194, 173);
     resize: none;
+
+    outline: none;
+    border: none;
+    padding: 10px;
+}
+button{
+    background-color: var(--color-nav);
+    margin: auto;
+    margin-top: 20px;
+    padding: 5px 20px;
+
+    border: none;
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 20px;
+    color: white;
+
+    display: block;
 }
 h3{
     color: white;
