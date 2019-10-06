@@ -5,7 +5,10 @@ function imageToText(url) {
   Tesseract.recognize(
     url,
     'eng',
-    { logger: m => console.log(m) }
+    { logger: function(m) {
+        document.querySelector(".progress").style.width = m.progress + "%;";
+        console.log(m);
+    }}
   ).then(({ data: { text } }) => {
     linearizeText(text);
   })
@@ -25,6 +28,8 @@ async function summarize(text) {
   var p = document.getElementById("interpretation")
   p.innerHTML = res.output
 
+  if (!document.querySelector(".progress.hide") && document.querySelector(".progress"))
+    document.querySelector(".progress").classList.add("hide");
   if (!document.querySelector(".loading.hide") && document.querySelector(".loading"))
     document.querySelector(".loading").classList.add("hide");
   if (document.querySelector(".text-area.hide"))

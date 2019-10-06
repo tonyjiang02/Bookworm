@@ -3,6 +3,8 @@ fileInput.addEventListener('change', function(e){
   processImage(e.target.files);
   if (document.querySelector("body.empty"))
     document.querySelector("body.empty").classList.remove("empty");
+  if (document.querySelector(".progress.hide"))
+    document.querySelector(".progress.hide").classList.remove(".hide");
   if (document.querySelector(".loading.hide"))
     document.querySelector(".loading.hide").classList.remove(".hide");
   if (!document.querySelector(".text-area.hide") && document.querySelector(".text-area"))
