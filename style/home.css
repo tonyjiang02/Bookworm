@@ -252,9 +252,14 @@ textarea{
     background-color: rgb(67, 194, 173);
     resize: none;
 
+    color: white;
     outline: none;
     border: none;
     padding: 10px;
+}
+textarea::placeholder{
+    color: rgba(255, 255, 255, .5);
+    font-family: inherit;
 }
 button{
     background-color: var(--color-nav);
