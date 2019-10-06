@@ -24,4 +24,9 @@ async function summarize(text) {
   console.log(res)
   var p = document.getElementById("interpretation")
   p.innerHTML = res.output
+
+  if (!document.querySelector(".loading.hide") && document.querySelector(".loading"))
+    document.querySelector(".loading").classList.add("hide");
+  if (document.querySelector(".text-area.hide"))
+    document.querySelector(".text-area.hide").classList.remove("hide");
 }

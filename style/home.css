@@ -151,7 +151,6 @@ input.img-button{
     overflow: hidden;
 
     border: none;
-    border-radius: 10px;
 
     position: relative;
 }
@@ -188,6 +187,21 @@ body.empty .bookmark{
     transform: scaleX(0);
 }
 
+.loading{
+    width: 100%;
+    min-height: calc(44% - 60px);
+    max-height: max-content;
+
+    position: absolute;
+    top: calc(56% + 60px);
+
+    color: white;
+    text-align: center;
+}
+body.empty .loading, .loading.hide{
+    display: none;
+}
+
 .text-area{
     transform-origin: bottom;
 
@@ -196,6 +210,9 @@ body.empty .bookmark{
     padding: 30px;
 
     transition: transform .5s;
+}
+.text-area.hide{
+    visibility: hidden;
 }
 body.empty .text-area{
     transform: scaleY(0);
@@ -216,4 +233,7 @@ textarea{
     width: 100%;
     background-color: skyblue;
     resize: none;
+}
+h3{
+    color: white;
 }
