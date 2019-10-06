@@ -22,7 +22,7 @@
     <script src="https://cdnjs.deepai.org/deepai.min.js"></script>
 </head>
 
-<body class="empty">
+<body class="">
     <div class="navbar">
         <a href="index.html"><i class="fas fa-camera-retro"></i></a>
         <a href="textInput.html" class="active"><i class="fas fa-camera-retro"></i></a>
@@ -31,14 +31,11 @@
     <div class="head">
         <h1>Bookworm</h1>
     </div>
-    <div class="input">
-        <textarea rows = "8" id = "text-input-area"></textarea>
-        <button type = "button" id ='submit-text'>Summarize</button>
-    </div>
-    <div class="text-area">
-        <h3>Text Summary</h3>
-        <p id="interpretation"></p>
-    </div>
+    <textarea rows="16" id="text-input-area"></textarea>
+    <button type="button" id='submit-text'>Summarize</button>
+    <h3>Text Summary</h3>
+    <p id="interpretation" style="top: 0"></p>
+
 </body>
 <script src="scripts/requests.js"></script>
 <script src="scripts/textRecog.js"></script>
