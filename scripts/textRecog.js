@@ -1,12 +1,14 @@
 deepai.setApiKey('28704cbe-4d81-47d5-8aea-f3b3644dd650')
 
 function imageToText(url) {
-  console.log("Hello")
   Tesseract.recognize(
     url,
     'eng',
     { logger: function(m) {
-        document.querySelector(".progress").style.width = m.progress + "%;";
+        if (m.status === "recognizing text") 
+            document.querySelector(".progress").style.width = (m.progress * 100).toFixed() + "%";
+        else
+            document.querySelector(".progress").style.width = "0%";
         console.log(m);
     }}
   ).then(({ data: { text } }) => {

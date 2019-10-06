@@ -72,13 +72,15 @@ body{
 }
 .progress{
     background-color: var(--color-lighter);
-    width: 100%;
+    width: 0%;
     height: 3px;
 
     position: absolute;
     top: 60px;
 
     z-index: 3;
+
+    transition: width 1s;
 }
 .progress.hide{
     display: none;
